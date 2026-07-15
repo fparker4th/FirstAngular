@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-test-child',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './test-child.html',
   styleUrl: './test-child.scss',
 })
-export class TestChild {}
+export class TestChild {
+  @Input({ required: true }) title: string = '';
+}

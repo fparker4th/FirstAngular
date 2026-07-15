@@ -11,4 +11,9 @@ import { TestChild } from './test-child/test-child';
   templateUrl: './test.html',
   styleUrl: './test.scss',
 })
-export class Test {}
+export class Test {
+  testData: TestData = {
+    id: 1,
+    title: 'Test Title'
+  };
+}

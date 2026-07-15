@@ -8,5 +8,6 @@ import { Component, input } from '@angular/core';
   styleUrl: './test-child.scss',
 })
 export class TestChild {
-  title = input('title', { transform: val=> val || 'default title' });
+  title = input<string>();
+
 }

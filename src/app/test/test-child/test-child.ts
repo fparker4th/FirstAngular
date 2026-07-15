@@ -9,5 +9,6 @@ import { Component, input } from '@angular/core';
 })
 export class TestChild {
   title = input<string>();
+  testData= input<TestData>();
 
 }

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
+
 
 @Component({
   selector: 'app-test-child',
@@ -7,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './test-child.scss',
 })
 export class TestChild {
-  @Input({ required: true }) title: string = '';
+  title = input('title', { transform: val=> val || 'default title' });
 }

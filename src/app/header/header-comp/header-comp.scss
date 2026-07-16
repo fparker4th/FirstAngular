@@ -1,14 +1,19 @@
 @use '../../../styleConstants/varibles' as vars;
-@use '../../../styleConstants/mixins' as mixins;
 nav
 {
-  background-color:vars.$nav_header_background;
-  color: vars.$nav_header_font_color;
+  background-color: #333;
+  color: white;
   padding: 1rem;
 }
 
-@include mixins.headerContainer;
-
+.header-container
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .logo h2
 {
@@ -24,13 +29,19 @@ nav
   padding: 0;
 }
 
-.nav-links a
-{
-  color: vars.$nav_header_font_color;
+.nav-links a {
+  color: white;
   text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.nav-links a:hover
-{
-  text-decoration: underline;
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
 }

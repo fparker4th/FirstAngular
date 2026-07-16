@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, effect } from '@angular/core';
 
 
 @Component({
@@ -9,6 +9,13 @@ import { Component, input } from '@angular/core';
 })
 export class TestChild {
   title = input<string>();
+  testData= input<TestData>();
+  constructor() {
+    effect(() => {
+      console.log('testData changed:', this.testData())
+    });
+
+  }
   testData= input.required<TestData>();
 
 }

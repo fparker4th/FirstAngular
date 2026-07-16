@@ -16,5 +16,6 @@ export class TestChild {
     });
 
   }
+  testData= input.required<TestData>();
 
 }

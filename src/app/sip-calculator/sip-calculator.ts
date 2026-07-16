@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-sip-calculator',
@@ -6,4 +6,17 @@ import { Component } from '@angular/core';
   templateUrl: './sip-calculator.html',
   styleUrl: './sip-calculator.scss',
 })
-export class SipCalculator {}
+export class SipCalculator {
+  title = input<string>('SIP Calculator');
+  monthlyAmount: number = 5000;
+  investmentPeriod: number = 10; //in years
+  expectedReturnRate: number = 12; //percentage
+
+  //Calculated results
+  totalInvestment = signal<number>(this.monthlyAmount 
+    * 12 * this.investmentPeriod);
+  maturityAmount = signal<number>(1162000); //Simplified calculation for now
+  estimatedReturns = signal<number>(this.maturityAmount() - this.totalInvestment());
+
+
+}

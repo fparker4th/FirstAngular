@@ -1,8 +1,8 @@
-@import '../../../styles.scss';
+@use '../../../styleConstants/varibles' as vars;
 nav
 {
-  background-color: lightgray;
-  color: white;
+  background-color:vars.$nav_header_background;
+  color: vars.$nav_header_font_color;
   padding: 1rem;
 }
 
@@ -31,7 +31,7 @@ nav
 
 .nav-links a
 {
-  color: white;
+  color: vars.$nav_header_font_color;
   text-decoration: none;
 }
 

@@ -1,9 +1,11 @@
+@use './varibles' as vars;
+
 @mixin headerContainer {
     .header-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
+        max-width: vars.$screen-max-width;
         margin: 0 auto;
     }
 }

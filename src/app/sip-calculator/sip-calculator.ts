@@ -17,6 +17,14 @@ export class SipCalculator {
     * 12 * this.investmentPeriod);
   maturityAmount = signal<number>(1162000); //Simplified calculation for now
   estimatedReturns = signal<number>(this.maturityAmount() - this.totalInvestment());
+  fundName: string | null = null;
 
+  //Calculated results
+  
+  //Simple calculation method
+  calculateYearlyInvestment(): number
+  {
+    return this.monthlyAmount * 12;
+  }
 
 }

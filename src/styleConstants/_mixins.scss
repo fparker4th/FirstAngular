@@ -13,10 +13,11 @@
 @mixin container {
     .container {
         max-width: 100vw;
-        margin: 1px 0;
+        margin: 1px 1px 1px 1px;
         padding: 60px;
         padding: 60px 20px;
-        background: #f8f9fa;
-        min-height: 400px;
+        background: lightgray;
+        color: blue;
+        min-height: 600px;
     }
 }

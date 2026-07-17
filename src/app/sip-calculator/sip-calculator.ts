@@ -57,8 +57,57 @@ title: string = "SIP Returns Calculator";
   }
 
   //Method to show event details
-  showEventDetails(event: MouseEvent): void
+  updateMonthlyAmount(event: Event): void
   {
-    console.log("Clicked at coordinates: ", event.clientX, event.clientY);
+    const target = event.target as HTMLInputElement;
+    const value: number = +target.value;
+
+    if (isNaN(value))
+      this.monthlyAmount = 0;
+    else
+      this.monthlyAmount = value;
+  }
+
+  updatePeriod(event: Event): void
+  {
+    const target = event.target as HTMLInputElement;
+    const value: number = +target.value;
+
+    if (isNaN(value) || value < 1)
+      this.investmentPeriod = 1;
+    else
+      this.investmentPeriod = value;
+  }
+
+  updateReturnRate(event: Event): void
+  {
+    const target = event.target as HTMLInputElement;
+    const value: number = +target.value;
+
+    if (isNaN(value))
+      this.expectedReturnRate = 0;
+    else
+      this.expectedReturnRate = value;
+  }
+
+  onPeriodComplete(event: Event): void
+  {
+    console.log('Change event fired');
+  }
+
+  //Property for tracking currently editing field
+  currentlyEditing: string = '';
+
+  onFieldFocus(fieldName: string): void
+  {
+    this.currentlyEditing = fieldName;
+  }
+
+  onFieldBlur(): void
+  {
+    this.currentlyEditing = '';
+  }
+  showEventDetails(event: Event): void{
+    console.log('Event details:', event);
   }
 }

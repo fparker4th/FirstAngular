@@ -6,19 +6,28 @@
     <h3>Investment Details</h3>
     <table>
       <tr>
-        <td>Monthly SIP Amount:</td>
-        <th>${{ monthlyAmount }}</th>
+        <td><label>Monthly SIP Amount ($):</label></td>
+        <td>
+            <input type="number" [value]="monthlyAmount" (input)="updateMonthlyAmount($event)" (focus)="onFieldFocus('Monthly Amount')" (blur)="onFieldBlur()" />
+        </td>
       </tr>
       <tr>
-        <td>Investment Period:</td>
-        <th>{{ investmentPeriod + ' years = ' + investmentPeriod * 12 + ' months' }}</th>
+        <td><label>Investment Period (years):</label></td>
+        <td>
+            <input type="number" [value]="investmentPeriod" (input)="updatePeriod($event)" (change)="onPeriodComplete($event)" (focus)="onFieldFocus('Investment Period')" (blur)="onFieldBlur()" />
+        </td>
       </tr>
       <tr>
-        <td>Expected Annual Return:</td>
-        <th>{{ expectedReturnRate }}%</th>
+        <td><label>Expected Annual Return (%):</label></td>
+        <td>
+            <input type="number" [value]="expectedReturnRate" (input)="updateReturnRate($event)" (focus)="onFieldFocus('Expeced Annual Return')" (blur)="onFieldBlur()" />
+        </td>
       </tr>
     </table>
+
+    <p class="editing-hint">Currently editing: {{currentlyEditing}}</p>
   </div>
+
 
   <div class="amount-controls">
     <button (click)="adjustAmount(-1000)">- $1000</button>

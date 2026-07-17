@@ -41,7 +41,7 @@ body {
 }
 
 ::view-transition-new(root) {
-  animation: 100ms ease-out both fade-in, 100ms ease-out both slide-from-right;
+  animation: 200ms ease-out both fade-in, 200ms ease-out both slide-from-right;
 }
 
 /* Keyframe Definitions */

@@ -8,19 +8,19 @@
       <tr>
         <td><label>Monthly SIP Amount ($):</label></td>
         <td>
-            <input type="number" [value]="monthlyAmount" (input)="updateMonthlyAmount($event)" (focus)="onFieldFocus('Monthly Amount')" (blur)="onFieldBlur()" />
+            <input type="number" [(ngModel)]="monthlyAmount" (focus)="onFieldFocus('Monthly Amount')" (blur)="onFieldBlur()" />
         </td>
       </tr>
       <tr>
         <td><label>Investment Period (years):</label></td>
         <td>
-            <input type="number" [value]="investmentPeriod" (input)="updatePeriod($event)" (change)="onPeriodComplete($event)" (focus)="onFieldFocus('Investment Period')" (blur)="onFieldBlur()" />
+            <input type="number" [(ngModel)]="investmentPeriod" (change)="onPeriodComplete($event)" (focus)="onFieldFocus('Investment Period')" (blur)="onFieldBlur()" />
         </td>
       </tr>
       <tr>
         <td><label>Expected Annual Return (%):</label></td>
         <td>
-            <input type="number" [value]="expectedReturnRate" (input)="updateReturnRate($event)" (focus)="onFieldFocus('Expeced Annual Return')" (blur)="onFieldBlur()" />
+            <input type="number"  [(ngModel)]="expectedReturnRate" (focus)="onFieldFocus('Expeced Annual Return')" (blur)="onFieldBlur()" />
         </td>
       </tr>
     </table>

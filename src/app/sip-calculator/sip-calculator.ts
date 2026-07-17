@@ -1,8 +1,9 @@
 import { Component, input, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sip-calculator',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './sip-calculator.html',
   styleUrl: './sip-calculator.scss',
 })
@@ -56,40 +57,7 @@ title: string = "SIP Returns Calculator";
     this.monthlyAmount = Math.max(0, this.monthlyAmount + amount);
   }
 
-  //Method to show event details
-  updateMonthlyAmount(event: Event): void
-  {
-    const target = event.target as HTMLInputElement;
-    const value: number = +target.value;
-
-    if (isNaN(value))
-      this.monthlyAmount = 0;
-    else
-      this.monthlyAmount = value;
-  }
-
-  updatePeriod(event: Event): void
-  {
-    const target = event.target as HTMLInputElement;
-    const value: number = +target.value;
-
-    if (isNaN(value) || value < 1)
-      this.investmentPeriod = 1;
-    else
-      this.investmentPeriod = value;
-  }
-
-  updateReturnRate(event: Event): void
-  {
-    const target = event.target as HTMLInputElement;
-    const value: number = +target.value;
-
-    if (isNaN(value))
-      this.expectedReturnRate = 0;
-    else
-      this.expectedReturnRate = value;
-  }
-
+ 
   onPeriodComplete(event: Event): void
   {
     console.log('Change event fired');

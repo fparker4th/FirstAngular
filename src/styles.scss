@@ -36,4 +36,25 @@ body {
   margin: 0;
   height: 100%;
 }
+::view-transition-old(root) {
+  animation: 300ms ease-out both fade-out, 300ms ease-out both slide-to-left;
+}
+
+::view-transition-new(root) {
+  animation: 200ms ease-out both fade-in, 200ms ease-out both slide-from-right;
+}
+
+/* Keyframe Definitions */
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+ @keyframes slide-from-right {
+   from { transform: translateX(50px); }
+ }
+ @keyframes slide-to-left {
+   to { transform: translateX(-50px); }
+ }
 /* You can add global styles to this file, and also import other style files */

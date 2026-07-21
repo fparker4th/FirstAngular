@@ -58,3 +58,35 @@
   color: #333;
   margin-bottom: 15px;
 }
+
+.success {
+  background-color: lightgreen;
+  color: darkgreen;
+  padding: 10px;
+}
+
+.warning {
+  background-color: lightyellow;
+  color: darkorange;
+  padding: 10px;
+}
+
+.danger {
+  background-color: lightpink;
+  color: darkred;
+  padding: 10px;
+}
+
+
+.highlight {
+  border: 2px solid gold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-large {
+  font-size: 24px;
+}

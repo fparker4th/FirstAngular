@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dash-board.scss',
 })
 export class DashBoard {
-  salesValue = signal<number>(40000);
+  salesValue = signal<number>(140000);
   targetValue = signal<number>(100000);
   isActive = signal<boolean>(true);
   performance = signal<string>('average'); //options: poor, average, excellent
@@ -46,6 +46,9 @@ export class DashBoard {
   {
     const percentage = (this.salesValue() / this.targetValue()) * 100;
     return percentage < 50;
+  }
+  getHighPerformers(): Employee[]{
+    return this.employees().filter((employee)=> employee.salary>75000);
   }
 
 }

@@ -14,7 +14,7 @@
                 {
                 <div class="badge">Target Exceeded!</div>
                 }@else {
-                <div class="badge-warning">Target not met</div>
+                <div class="badge-warning">Below Target</div>
                 }
             </div>
 
@@ -35,8 +35,12 @@
     <div class="warning-message">
         Warning: Sales are critically low!
     </div>
+    } @else
+    {
+    <div class="success-message">
+        Great Job! Sales are on track.
+    </div>
     }
-
     <div class="status-section">
         <h3>System Status</h3>
         <div class="status-indicator" [ngClass]="{'success': isActive(), 'danger': !isActive(), 'highlight': true }"
@@ -57,7 +61,22 @@
         <h3 [ngClass]="[ 'text-center', 'text-large']">Employee List</h3>
         @if (employees() && employees().length > 0)
         {
-        <p>Employee data will be displayed here</p>
+        @for(employee of employees(); track employee.id)
+        {
+        <div class="employee-card" [class.high-salary]="employee.salary > 80000">
+            <h4>{{employee.name}}</h4>
+            <p>Role: {{employee.role}}</p>
+            <p>Salary: ${{employee.salary}}</p>
+        </div>
+        }
+        }
+
+        <h3>High Performers</h3>
+        @for (performer of getHighPerformers(); track performer.id)
+        {
+        <div class="employee-card high-performer">
+            <strong>{{performer.name}} - ${{performer.salary}}</strong>
+        </div>
         }
     </div>
 </div>

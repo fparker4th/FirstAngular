@@ -1,8 +1,9 @@
 import { Component, input, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sip-calculator',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './sip-calculator.html',
   styleUrl: './sip-calculator.scss',
 })
@@ -56,9 +57,25 @@ title: string = "SIP Returns Calculator";
     this.monthlyAmount = Math.max(0, this.monthlyAmount + amount);
   }
 
-  //Method to show event details
-  showEventDetails(event: MouseEvent): void
+ 
+  onPeriodComplete(event: Event): void
   {
-    console.log("Clicked at coordinates: ", event.clientX, event.clientY);
+    console.log('Change event fired');
+  }
+
+  //Property for tracking currently editing field
+  currentlyEditing: string = '';
+
+  onFieldFocus(fieldName: string): void
+  {
+    this.currentlyEditing = fieldName;
+  }
+
+  onFieldBlur(): void
+  {
+    this.currentlyEditing = '';
+  }
+  showEventDetails(event: Event): void{
+    console.log('Event details:', event);
   }
 }

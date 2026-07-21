@@ -1,16 +1,17 @@
 import { Component, signal } from '@angular/core';
 import { Employee } from '../model/employeeModel';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dash-board',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './dash-board.html',
   styleUrl: './dash-board.scss',
 })
 export class DashBoard {
   salesValue = signal<number>(120000);
   targetValue = signal<number>(100000);
-  isActive = signal<boolean>(true);
+  isActive = signal<boolean>(false);
   performance = signal<string>('average'); //options: poor, average, excellent
   statusColor = signal<string>('green');
 

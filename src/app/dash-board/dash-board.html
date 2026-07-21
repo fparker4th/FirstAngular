@@ -5,7 +5,9 @@
         <h3>Performance Metrics</h3>
 
         <div class="metric-cards">
-            <div class="metric-card">
+            <div class="metric-card" [class.success]="salesValue() >= targetValue()"
+                [class.danger]="salesValue() < targetValue()">
+
                 <div class="label">Current Sales</div>
                 <div class="value" [style.color]="salesValue()>targetValue()?'green': 'red'">${{salesValue()}}</div>
             </div>
@@ -24,7 +26,8 @@
 
     <div class="status-section">
         <h3>System Status</h3>
-        <div class="status-indicator" [style]="{ 
+        <div class="status-indicator" [ngClass]="{'success': isActive(), 'danger': !isActive(), 'highlight': true }"
+            [style]="{ 
     'background-color': isActive()? 'lightgreen' : 'lightcoral',
     'padding' : '10px',
     'border-radius': '5px'

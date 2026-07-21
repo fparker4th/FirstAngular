@@ -90,3 +90,19 @@
 .text-large {
   font-size: 24px;
 }
+badge {
+  background-color: gold;
+  color: darkbrown;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.warning-message {
+  background-color: lightyellow;
+  color: darkred;
+  padding: 15px;
+  border-left: 4px solid red;
+  margin: 20px 0;
+}

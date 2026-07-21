@@ -42,5 +42,10 @@ export class DashBoard {
     else
       return 'success';
   }
+   shouldShowWarning() : boolean
+  {
+    const percentage = (this.salesValue() / this.targetValue()) * 100;
+    return percentage < 50;
+  }
 
 }

@@ -139,3 +139,24 @@
   background-color: #e8f5e9;
   border-left: 4px solid green;
 }
+
+.first-employee {
+  border-top: 3px solid green;
+}
+
+.last-employee {
+  border-bottom: 3px solid red;
+}
+
+.even-row {
+  background-color: #e3f2fd;
+}
+
+.rank-badge {
+  background-color: gold;
+  color: #333;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-right: 10px;
+}

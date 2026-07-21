@@ -61,21 +61,26 @@
         <h3 [ngClass]="[ 'text-center', 'text-large']">Employee List</h3>
         @if (employees() && employees().length > 0)
         {
-        @for(employee of employees(); track employee.id)
+        @for(employee of employees(); track employee.id; let idx = $index; let isFirst = $first; let isLast = $last; let
+        isEven = $even; let count = $count)
         {
-        <div class="employee-card" [class.high-salary]="employee.salary > 80000">
-            <h4>{{employee.name}}</h4>
+        <div class="employee-card" [class.first-employee]="isFirst" [class.last-employee]="isLast"
+            [class.even-row]="isEven">
+            <h4>{{idx + 1}}. {{employee.name}}</h4>
             <p>Role: {{employee.role}}</p>
             <p>Salary: ${{employee.salary}}</p>
+            <p><small>{{idx + 1}} of {{count}} employees</small></p>
         </div>
         }
         }
 
         <h3>High Performers</h3>
-        @for (performer of getHighPerformers(); track performer.id)
+        @for (performer of getHighPerformers(); track performer.id; let idx = $index)
         {
         <div class="employee-card high-performer">
-            <strong>{{performer.name}} - ${{performer.salary}}</strong>
+            @if (idx < 3) { <span class="rank-badge">Rank {{idx + 1}}</span>
+                }
+                <strong>{{performer.name}} - ${{performer.salary}}</strong>
         </div>
         }
     </div>

@@ -41,11 +41,14 @@
             [style]="{ 
     'background-color': isActive()? 'lightgreen' : 'lightcoral',
     'padding' : '10px',
-    'border-radius': '5px'
-   
-   }">
+    'border-radius': '5px'}">
             System is {{isActive()? 'Active' : 'Inactive'}}
         </div>
+        @if (isActive()) {
+        <p>System is running smoothly.</p>
+        }@else{
+        <p>System is offline.</p>
+        }
     </div>
 
     <div class="employee-section">

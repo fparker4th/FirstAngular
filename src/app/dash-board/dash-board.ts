@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class DashBoard {
   salesValue = signal<number>(40000);
   targetValue = signal<number>(100000);
-  isActive = signal<boolean>(false);
+  isActive = signal<boolean>(true);
   performance = signal<string>('average'); //options: poor, average, excellent
   statusColor = signal<string>('green');
 

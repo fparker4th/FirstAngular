@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dash-board.scss',
 })
 export class DashBoard {
-  salesValue = signal<number>(110000);
+  salesValue = signal<number>(40000);
   targetValue = signal<number>(100000);
   isActive = signal<boolean>(false);
   performance = signal<string>('average'); //options: poor, average, excellent

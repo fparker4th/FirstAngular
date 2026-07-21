@@ -28,6 +28,13 @@
         </div>
     </div>
 
+    @if (shouldShowWarning())
+    {
+    <div class="warning-message">
+        Warning: Sales are critically low!
+    </div>
+    }
+
     <div class="status-section">
         <h3>System Status</h3>
         <div class="status-indicator" [ngClass]="{'success': isActive(), 'danger': !isActive(), 'highlight': true }"

@@ -58,3 +58,21 @@
   color: #333;
   margin-bottom: 15px;
 }
+
+.success {
+  background-color: lightgreen;
+  color: darkgreen;
+  padding: 10px;
+}
+
+.warning {
+  background-color: lightyellow;
+  color: darkorange;
+  padding: 10px;
+}
+
+.danger {
+  background-color: lightpink;
+  color: darkred;
+  padding: 10px;
+}

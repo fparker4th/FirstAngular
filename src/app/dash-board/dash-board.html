@@ -10,6 +10,10 @@
 
                 <div class="label">Current Sales</div>
                 <div class="value" [style.color]="salesValue()>targetValue()?'green': 'red'">${{salesValue()}}</div>
+                @if (salesValue() > targetValue())
+                {
+                <div class="badge">Target Exceeded!</div>
+                }
             </div>
 
             <div class="metric-card">
@@ -17,12 +21,19 @@
                 <div class="value">${{targetValue()}}</div>
             </div>
 
-             <div [class]="getPerformanceClass() + ' metric-card'">
+            <div [class]="getPerformanceClass() + ' metric-card'">
                 <div class="label">Target Achieved</div>
                 <div class="value">{{ (salesValue() / targetValue() * 100).toFixed(1)}}%</div>
             </div>
         </div>
     </div>
+
+    @if (shouldShowWarning())
+    {
+    <div class="warning-message">
+        Warning: Sales are critically low!
+    </div>
+    }
 
     <div class="status-section">
         <h3>System Status</h3>
@@ -39,6 +50,9 @@
 
     <div class="employee-section">
         <h3 [ngClass]="[ 'text-center', 'text-large']">Employee List</h3>
+        @if (employees() && employees().length > 0)
+        {
         <p>Employee data will be displayed here</p>
+        }
     </div>
 </div>

@@ -9,7 +9,7 @@ import { Employee } from '../model/employeeModel';
 })
 export class DashBoard {
   salesValue = signal<number>(75000);
-  targetValue = signal<number>(1000);
+  targetValue = signal<number>(100000);
   isActive = signal<boolean>(false);
   performance = signal<string>('average'); //options: poor, average, excellent
   statusColor = signal<string>('green');

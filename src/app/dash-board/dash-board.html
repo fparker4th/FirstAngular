@@ -1,5 +1,5 @@
 <div class="dashboard-container">
-    <h2>Sales Dashboard</h2>
+    <h2 [style.color]="statusColor()">Sales Dashboard</h2>
 
     <div class="metrics-section">
         <h3>Performance Metrics</h3>
@@ -7,7 +7,7 @@
         <div class="metric-cards">
             <div class="metric-card">
                 <div class="label">Current Sales</div>
-                <div class="value">${{salesValue()}}</div>
+                <div class="value" [style.color]="salesValue()>targetValue()?'green': 'red'">${{salesValue()}}</div>
             </div>
 
             <div class="metric-card">
@@ -24,7 +24,12 @@
 
     <div class="status-section">
         <h3>System Status</h3>
-        <div class="status-indicator">
+        <div class="status-indicator" [style]="{ 
+    'background-color': isActive()? 'lightgreen' : 'lightcoral',
+    'padding' : '10px',
+    'border-radius': '5px'
+   
+   }">
             System is {{isActive()? 'Active' : 'Inactive'}}
         </div>
     </div>

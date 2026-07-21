@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dash-board.scss',
 })
 export class DashBoard {
-  salesValue = signal<number>(120000);
+  salesValue = signal<number>(45000);
   targetValue = signal<number>(100000);
   isActive = signal<boolean>(false);
   performance = signal<string>('average'); //options: poor, average, excellent
@@ -31,6 +31,16 @@ export class DashBoard {
       return 'orange';
     else
       return 'green';
+  }
+  getPerformanceClass(): string
+  {
+    const percentage = (this.salesValue() / this.targetValue()) * 100;
+    if (percentage < 50)
+      return 'danger';
+    else if (percentage < 80)
+      return 'warning';
+    else
+      return 'success';
   }
 
 }

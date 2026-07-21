@@ -17,7 +17,7 @@
                 <div class="value">${{targetValue()}}</div>
             </div>
 
-            <div class="metric-card">
+             <div [class]="getPerformanceClass() + ' metric-card'">
                 <div class="label">Target Achieved</div>
                 <div class="value">{{ (salesValue() / targetValue() * 100).toFixed(1)}}%</div>
             </div>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="employee-section">
-        <h3>Employee List</h3>
+        <h3 [ngClass]="[ 'text-center', 'text-large']">Employee List</h3>
         <p>Employee data will be displayed here</p>
     </div>
 </div>

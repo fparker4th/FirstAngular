@@ -13,6 +13,8 @@
                 @if (salesValue() > targetValue())
                 {
                 <div class="badge">Target Exceeded!</div>
+                }@else {
+                <div class="badge-warning">Target not met</div>
                 }
             </div>
 

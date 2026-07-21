@@ -50,6 +50,9 @@
 
     <div class="employee-section">
         <h3 [ngClass]="[ 'text-center', 'text-large']">Employee List</h3>
+        @if (employees() && employees().length > 0)
+        {
         <p>Employee data will be displayed here</p>
+        }
     </div>
 </div>

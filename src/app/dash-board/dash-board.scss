@@ -90,9 +90,19 @@
 .text-large {
   font-size: 24px;
 }
-badge {
+.badge {
+  margin-top: 5px;
   background-color: gold;
   color: darkbrown;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-left: 10px;
+}
+.badge-warning {
+  margin-top: 5px;
+  background-color: lightcoral;
+  color: darkred;
   padding: 5px 10px;
   border-radius: 15px;
   display: inline-block;
@@ -106,4 +116,47 @@ badge {
   border-radius: 7px;
   border-left: 4px solid red;
   margin: 20px 0;
+}
+.success-message {
+  background-color: lightgreen;
+  color: darkgreen;
+  padding: 15px;
+  border-left: 4px solid green;
+  margin: 20px 0;
+}
+.employee-card p {
+  margin: 5px;
+  color: #666;
+}
+
+.high-salary {
+  border: 2px solid gold;
+  border-radius: 10px;
+  background-color: #fffef0;
+}
+
+.high-performer {
+  background-color: #e8f5e9;
+  border-left: 4px solid green;
+}
+
+.first-employee {
+  border-top: 3px solid green;
+}
+
+.last-employee {
+  border-bottom: 3px solid red;
+}
+
+.even-row {
+  background-color: #e3f2fd;
+}
+
+.rank-badge {
+  background-color: gold;
+  color: #333;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-right: 10px;
 }

@@ -9,9 +9,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dash-board.scss',
 })
 export class DashBoard {
-  salesValue = signal<number>(40000);
+  salesValue = signal<number>(140000);
   targetValue = signal<number>(100000);
-  isActive = signal<boolean>(false);
+  isActive = signal<boolean>(true);
   performance = signal<string>('average'); //options: poor, average, excellent
   statusColor = signal<string>('green');
 
@@ -20,7 +20,10 @@ export class DashBoard {
     [
       { id: 1, name: 'John Smith', role: 'Manager', salary: 85000 },
       { id: 2, name: 'Sarah Johnson', role: 'Developer', salary: 75000 },
-      { id: 3, name: 'Mike Davis', role: 'Designer', salary: 65000 }
+      { id: 3, name: 'Mike Davis', role: 'Designer', salary: 65000 },
+      { id: 4, name: 'Jim Jones', role: 'Developer', salary: 90000 },
+      { id: 5, name: 'Janet Cabral', role: 'Developer', salary: 87000 },
+
     ]);
 
   getPerformanceColor(): string {
@@ -32,8 +35,7 @@ export class DashBoard {
     else
       return 'green';
   }
-  getPerformanceClass(): string
-  {
+  getPerformanceClass(): string {
     const percentage = (this.salesValue() / this.targetValue()) * 100;
     if (percentage < 50)
       return 'danger';
@@ -42,10 +44,13 @@ export class DashBoard {
     else
       return 'success';
   }
-   shouldShowWarning() : boolean
-  {
+  shouldShowWarning(): boolean {
     const percentage = (this.salesValue() / this.targetValue()) * 100;
     return percentage < 50;
+  }
+  getHighPerformers(): Employee[] {
+    return this.employees().filter((employee) => employee.salary > 75000)
+    .sort((e1,e2 )=>e2.salary-e1.salary);
   }
 
 }
